@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Practice Form</title>
+	</head>
+	<body>
+		<form name="practice" action="success.html" id="beerform">
+			<fieldset>
+			<div>
+				<label>Name:</label>
+				<input type="text" name="usrname">
+			</div>
+			<div>
+				<label>Email:</label>
+				<input type="email" name="email">
+			</div>
+			<div>
+				<label>Password:</label>
+				<input type="password" name="password">
+			</div>
+			<div>
+				<label>Beer types:</label>
+				<select name="beer">
+					<option value="ipa">IPA</option>
+					<option value="pilsner">Pilsner</option>
+					<option value="stout">Stout</option>
+				</select>
+			</div>
+			</fieldset>
+			<br>
+		</form>
+		<br>
+			<textarea name="feelings" form="beerform" placeholder="tell me your feelz"></textarea>
+			<br>
+			<button type="submit" form="beerform">Beer Button</button>
+	</body>
+</html>
