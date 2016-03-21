@@ -1,6 +1,10 @@
 body {
   max-width: 960px;
 }
+#allthethings {
+  max-width: 600px;
+  margin: auto;
+}
 
 #external-links {
   width:20%;
@@ -49,7 +53,6 @@ figcaption {
 
 @media screen and (max-width: 500px) {
 body {
-  background-color: hotpink;
   font-size: x-small;
 }
 
