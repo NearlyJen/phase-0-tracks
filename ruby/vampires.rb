@@ -22,6 +22,23 @@ while num < employees do
 	print "Would you like to enroll in the company’s health insurance? (y/n)"
 	wantsinsurance=gets.chomp
 
+	# ask user to type in allergy. check to see if allergy is sunshine or done. keep asking to name another allergy
+	#if not sunshine or done. 
+	print "Do you have any allergies? Please type one at a time, and enter 'done' when finished. "
+	allergy = ""
+	
+	until allergy == "sunshine" || allergy == "done" do
+		allergy = gets.chomp
+		if allergy == "sunshine"
+			break 
+		elsif allergy == "done" 
+			break
+		else 
+			puts "Please enter another allergy"
+		end
+	end
+
+
 
 	if name == "Drake Cula" || name == "Tu Fang"
 		puts "Definitely a vampire"
@@ -29,7 +46,7 @@ while num < employees do
 	elsif age != (currentyear - yearborn) && (wantsbread == "n" && wantsinsurance == "n")
 		puts "Almost certainly a vampire."
 
-	elsif age != (currentyear - yearborn) && (wantsbread == "n" || wantsinsurance == "n")
+	elsif allergy == "sunshine" || age != (currentyear - yearborn) && (wantsbread == "n" || wantsinsurance == "n")
 		puts "Probably a vampire"
 
 	elsif age == (currentyear - yearborn) && (wantsbread == "y" || wantsinsurance == "y")
