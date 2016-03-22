@@ -3,12 +3,25 @@ name=gets.chomp
 
 print "How old are you?"
 age=gets.chomp
+age = age.to_i
 
 print "What year were you born?"
-year_born=gets.chomp
+yearborn=gets.chomp
+yearborn = yearborn.to_i
 
 print "Our company cafeteria serves garlic bread. Should we order some for you? (y/n)"
-wants_bread=gets.chomp
+wantsbread=gets.chomp
 
 print "Would you like to enroll in the company’s health insurance? (y/n)"
-wants_insurance=gets.chomp
+wantsinsurance=gets.chomp
+
+
+# if age is equal to current_year minus year_born && (is willing to eat garlic bread || get insurance)
+# print out "Probably not a vampire"
+
+ currentyear = 2016
+
+
+if age = (currentyear - yearborn) && (wantsbread = "y" || wantsinsurance = "y")
+	puts "Probably not a vampire"
+end
