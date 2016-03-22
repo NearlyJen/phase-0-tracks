@@ -1,0 +1,47 @@
+1. approach elevator
+2. select a button
+	- if current floor is lower than desired floor, pless the up arrow
+	- if current floor is higher than desired floor, press the down arrow
+3. wait for elevator with corresponding arrow to arrive
+4. when elevator doors open
+	- if passengers are exiting, wait for passengers to finish exiting exit and then enter elevator
+	- if elevator is full wait for next elevator with arrow corresponding to desired direction
+	- else, enter elevator
+5. turn around to face doors
+6. identify panel of buttons indicating available floors
+7. push button corresponding to desired floor
+8. when floor indicator = desired floor
+	- wait for doors to open
+		- if people in front of you are exiting, wait for them to begin exiting and then exit
+		- else, exit elevator
+
+
+
+Making a Sandwich (assumes ingredients are already on table)
+1. open bag of bread
+2. remove two slices of bread
+3. place bread on plate
+4. close bag of bread and return it to the table
+5. pick up and open jar of peanut butter
+6. place lid on table
+7. pick up butter knife by handle
+8. using rounded edge of knife, scoop peanut butter onto the blade
+9. place jar on the table
+10. pick up one slice of bread
+11. spread peanut butter evenly on bread slice
+12. put bread slice down on plate, peanut butter side facing up
+13. put knife down on table
+14. pick up jar of peanut butter and put lid back on
+15. place on table
+17. pick up and open jar of jam
+18. place lid on table
+19. pick up butter knife by handle
+20. using rounded edge of knife, scoop jam onto the blade
+21. place jar on the table
+22. pick up slice of bread that doesn't have peanut butter on it
+23. spread jam evenly on bread slice
+24. place bread slice down on bread slice that is on plate, jam side facing down
+25. put knife down on table
+26. pick up jar of jam and put lid back on
+27. place on table
+28. pick up sandwich and eat
