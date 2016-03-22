@@ -2,12 +2,11 @@ print "What is your name?"
 name=gets.chomp
 
 print "How old are you?"
-age=gets.chomp
-age = age.to_i
+age=gets.chomp.to_i
+
 
 print "What year were you born?"
-yearborn=gets.chomp
-yearborn = yearborn.to_i
+yearborn=gets.chomp.to_i
 
 print "Our company cafeteria serves garlic bread. Should we order some for you? (y/n)"
 wantsbread=gets.chomp
@@ -22,6 +21,18 @@ wantsinsurance=gets.chomp
  currentyear = 2016
 
 
-if age = (currentyear - yearborn) && (wantsbread = "y" || wantsinsurance = "y")
+if name == "Drake Cula" || name == "Tu Fang"
+	puts "Definitely a vampire"
+
+elsif age != (currentyear - yearborn) && (wantsbread == "n" && wantsinsurance == "n")
+	puts "Almost certainly a vampire."
+
+elsif age != (currentyear - yearborn) && (wantsbread == "n" || wantsinsurance == "n")
+	puts "Probably a vampire"
+
+elsif age == (currentyear - yearborn) && (wantsbread == "y" || wantsinsurance == "y")
 	puts "Probably not a vampire"
+
+else puts "Results inconclusive."
+
 end
