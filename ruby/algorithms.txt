@@ -1,0 +1,12 @@
+1. approach elevator
+2. select a button
+	- if current floor is lower than desired floor, pless the up arrow
+	- if current floor is higher than desired floor, press the down arrow
+3. wait for elevator with corresponding arrow to arrive
+4. when elevator doors open, wait for passenggers to exit and then enter elevator
+5. turn around to face doors
+6. identify panel of buttons indicating available floors
+7. push button corresponding to desired floor
+8. when floor indicator = desired floor
+	- wait for doors to open
+	- exit elevator
