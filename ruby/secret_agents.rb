@@ -11,6 +11,8 @@
 # 3. concatenate that character to an decrypted string
 # 4. repeat for each character in the encrypted string
 
+
+#downcase became redundant after adding it to user input
 def encrypt(str)
   encrypted_str = ""
   str.downcase.each_char do |c|
@@ -30,7 +32,7 @@ end
 # puts encrypt 'abc'
 # puts encrypt 'zed'
 
-
+#downcase became redundant after adding it to user input
 def decrypt(str)
   alphabet = "abcdefghijklmnopqrstuvwxyz"
   decrypted_str = ""
