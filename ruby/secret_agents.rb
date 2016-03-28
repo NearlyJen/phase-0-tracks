@@ -13,6 +13,8 @@
 
 
 #downcase became redundant after adding it to user input
+#NOTE!!! We did walk through doing this using a while statement and the length of the passed string! It would've run through the same
+#loop for as long as an incremented variable was less than or equal to the length of the string. We liked this better in the end. 
 def encrypt(str)
   encrypted_str = ""
   str.downcase.each_char do |c|
