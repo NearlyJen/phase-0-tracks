@@ -40,3 +40,9 @@ a:visited {
 a:hover {
 color: red;
 }
+
+summary {
+  background-color: #999;
+  padding: 5px;
+  margin: 0;
+}
