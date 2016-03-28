@@ -12,7 +12,6 @@ while num < employees do
 	print "How old are you?"
 	age=gets.chomp.to_i
 
-
 	print "What year were you born?"
 	yearborn=gets.chomp.to_i
 
