@@ -25,4 +25,4 @@ cross_family = {
 
 cross_family[:jennifer][:middle_name].downcase.reverse #"nnyl"
 cross_family[:ethan][:sports][2] #"soccer"
-cross_family[:theron][:kidney_count].to_s #{}"2"
+cross_family[:theron][:kidney_count].to_s #"2"
