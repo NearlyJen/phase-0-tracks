@@ -7,9 +7,9 @@
 
 client_data = { 
 	client_name: nil,
-	client_age: nil,
+	client_age: 0,
 	client_theme: nil,
-	client_kids: nil
+	client_kids: false
 }
 
 # NOTE: I know all of these repeated actions should be put into methods but I can't quite work out how to do it yet. 
