@@ -36,9 +36,12 @@ until choice == 'quit'
 	
 	# when they're done, show them all of the names/aliases
 	elsif choice == 'quit'
-		#print out each pair in the hash as a sentence
-		aliases.each do |real_name, alias_name|
-    		puts "#{real_name} is known as #{alias_name}"
+		if aliases[:realname] == nil
+			puts "You have no saved aliases."
+		else #print out each pair in the hash as a sentence
+			aliases.each do |real_name, alias_name|
+	    		puts "#{real_name} is known as #{alias_name}"
+	    	end
     	end
     else
     	puts "Please enter 'yes' to acquire a new alias, or 'quit' to exit this program"
