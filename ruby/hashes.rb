@@ -12,6 +12,7 @@ client_data = {
 	client_kids: nil
 }
 
+# NOTE: I know all of these repeated actions should be put into methods but I can't quite work out how to do it yet. 
 puts "Welcome to your awesome client data storage program! What is the name of your client?"
 name = gets.chomp
 client_data[:client_name] = name.to_sym
