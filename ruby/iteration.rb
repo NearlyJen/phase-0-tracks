@@ -44,28 +44,21 @@ hash2 = {
     e: 5
 }
 # # A method that iterates through the items, deleting any that meet a certain condition 
-# p array2.delete_if {|i| i == 4}
-# p hash2.delete_if {|key,value| key == :d}
+p array2.delete_if {|i| i == 4}
+p hash2.delete_if {|key,value| key == :d}
 
 # # A method that filters a data structure for only items that do satisfy a certain condition 
-# p array2.select {|i| i <= 3}
-# p hash2.select {|k, v| v <= 3}
-# p hash2.select {|k, v| k == :b}
+p array2.select {|i| i <= 3}
+p hash2.select {|k, v| v <= 3}
+p hash2.select {|k, v| k == :b}
 
 # #A different method that filters a data structure for only items satisfying a certain condition -- Ruby offers several options!
-# p array2.drop_while {|i| i < 3}
-# p hash2.drop_while {|k,v| v < 3}
+p array2.drop_while {|i| i < 3}
+p hash2.drop_while {|k,v| v < 3}
 
 # A method that will remove items from a data structure until the condition in the block evaluates to true, then stops.
 p array2.reject {|i| i <= 3}
 p array2.reject! {|i| i <= 3}
 
-# this returns an array of all the things that didn't meet the condition
-# p array2.index {|i| i == 3} 
-# p array2.delete_if {|i| i == 3} 
-
-
-# 1 2 3 4 5
-# F F T F F 
-# r r stop
-# [3, 4, 5]
+p hash2.reject {|k,v| v <= 3}
+p hash2.reject! {|k,v| v <= 3}
