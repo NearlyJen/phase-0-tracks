@@ -7,7 +7,6 @@ puts "We printed your name 3 times."
 
 
 
-
 # Release 1
 
 my_array = ["Danny", "Ben", "Sangmee", "Jennifer", "Theron"]
