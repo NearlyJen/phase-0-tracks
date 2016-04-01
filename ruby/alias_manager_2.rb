@@ -1,4 +1,9 @@
-def change_vowel(i)
+#place to store the name and alias pairs
+spy_names = Hash.new
+choice = " "
+
+#method to change the letters
+def change_letter(i)
 	case i
 		when ' ' then ' ' 
 		when 'a' then 'e'
@@ -9,27 +14,56 @@ def change_vowel(i)
 		when 'y' then 'a'
 		when 'z' then 'a'
 	else 
-		i.next
+		j = i.next
+		case j
+			when 'a' then j.next
+			when 'e' then j.next
+			when 'i' then j.next
+			when 'o' then j.next
+			when 'u' then j.next
+		else 
+			j = i.next
+		end
 	end
 end
 
 
+#runs until the user wants to quit
+until choice == 'quit'
+	puts "Do you need a new alias? ('yes' or 'quit')"
+	choice = gets.chomp.downcase
 
-#get the spy's first and last real names
-puts "Please enter your real name, or 'quit' to leave this program."
-real_name = gets.chomp.downcase
+	if choice == 'yes'
 
-#reverse the order, so last name first
-each_name = real_name.split(' ').reverse
+		#get the spy's first and last real names
+		puts "Please enter your real name."
+		real_name = gets.chomp.downcase
+		
+		#reverse the order, so last name first
+		each_name = real_name.split(' ').reverse
+		
+		#take each vowel and make it the next vowel, and each consonant and make it the next consonant.
+		# factor in spaces and edge cases
+		new_name_array = each_name.collect{|i| i.chars.map{|x| change_letter(x)}}
+		
+		#re-capitalize the names, join them bck into a string instead of an array
+		alias_name_array = new_name_array.collect{|i| i.join.capitalize}
+		new_alias = alias_name_array.join(' ')
+		
+		#save to the hash and print
+		spy_names[real_name.to_sym] = new_alias
+		p "You: #{real_name} shall now be known as #{new_alias}"
 
-#take each vowel and make it the next vowel, and each consonant and make it the next consonant.
-# factor in spaces and edge cases
-new_name = each_name.collect{|i| i.chars.map{|x| change_vowel(x)}}
-
-#re capitalize the names and print out
-alias_name = new_name.collect{|i| i.join.capitalize}
-p alias_name.join(' ')
-
+	# when they're done, show them all of the names/aliases
+	elsif choice == 'quit'
+		#print out each pair in the hash as a sentence
+		spy_names.each do |real_name, new_alias|
+	    	puts "#{real_name}: #{new_alias}"
+	    end
+    else
+    	puts "Please enter 'yes' to acquire a new alias, or 'quit' to exit this program"
+    end
+end
 
 
 
