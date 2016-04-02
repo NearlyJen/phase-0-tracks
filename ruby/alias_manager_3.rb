@@ -1,7 +1,15 @@
-# When writing pseudocode, the object is to break down the problem into small steps, but the key is that these steps should mimic the lines you write when you work through your initial solution.
-
-# There are three best practices I want you to keep in mind when you write pseudocode. First, capitalize language-specific keywords (IF, ELSE, BREAK, etc). Second, write your pseudocode line-by-line as you would write your actual code. Just make sure it’s in plain English (no symbols, code-specific terminology). Finally, indent your pseudocode as you would your actual code. This means indenting code blocks, conditionals, and the like whenever written.
-
+# find out if the user needs a new alias or wants to quit
+# IF they want a new alias, then get their real name
+# take their real name and split it into separate words, and then reverse the order of those words
+# make lowercase so easier to match strings
+# each vowel in the name should become the next vowel
+# each consonant in the name should become the next consonant
+# IF the name has a letter "z", that should be a 'b'
+# the names should be reacapitalized and put back into name strings
+# real names and aliases should be saved as keys and values in a hash
+# tell the user what their new alias is
+# ask they user if they would like to get another alias
+# if the user is done, do the very insecure thing of telling them everyones names and aliases
 
 #place to store the name and alias pairs
 spy_names = Hash.new
@@ -11,6 +19,9 @@ def next_letter(name)
 cipher = {'a' => 'e',  'e' => 'i', 'i' => 'o', 'o' => 'u', 'u' => 'a'}
    if cipher.has_key?(name)
      name = cipher[name]
+    elsif 
+     name == 'z'
+     name = 'b'
     elsif 
      cipher.has_key?(name.next)
      name = name.next.next
@@ -56,9 +67,3 @@ until choice == 'quit'
       puts "Please enter 'yes' to acquire a new alias, or 'quit' to exit this program"
     end
 end
-
-
-
-
-
-
