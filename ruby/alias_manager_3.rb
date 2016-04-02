@@ -17,17 +17,17 @@ choice = " "
 
 def next_letter(name)
 cipher = {'a' => 'e',  'e' => 'i', 'i' => 'o', 'o' => 'u', 'u' => 'a'}
-   if cipher.has_key?(name)
-     name = cipher[name]
-    elsif 
-     name == 'z'
-     name = 'b'
-    elsif 
-     cipher.has_key?(name.next)
-     name = name.next.next
-    else
-     name.next
-   end
+  if cipher.has_key?(name)
+    name = cipher[name]
+  elsif 
+    name == 'z'
+    name = 'b'
+  elsif 
+    cipher.has_key?(name.next)
+    name = name.next.next
+  else
+    name.next
+  end
 end
 
 
@@ -61,8 +61,8 @@ until choice == 'quit'
   elsif choice == 'quit'
     #print out each pair in the hash as a sentence
     spy_names.each do |real_name, new_alias|
-        puts "#{real_name}: #{new_alias}"
-      end
+      puts "#{real_name}: #{new_alias}"
+    end
     else
       puts "Please enter 'yes' to acquire a new alias, or 'quit' to exit this program"
     end
