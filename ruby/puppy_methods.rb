@@ -37,3 +37,31 @@ fern.roll_over
 fern.dog_years(7)
 fern.bed_sneak("no")
 
+
+
+class TalkingComputer
+
+  def initialize
+    puts "Engaging Infinite Improbability Drive... "
+  end
+
+  def avoid(str)
+    puts "Guys, I am just pleased as punch to inform you that there are two thermo-nuclear missiles headed this way... if you don't mind, I'm gonna go ahead and take evasive action " if str == 'yes'
+    puts "Sure thing fella! Switching over to manual control... good luck!" if str == 'no'
+  end
+
+  def personality_problems(int)
+    puts "#{int}, yeah? I can even work out your personality problems to ten decimal places if it'll help."
+  end
+
+end
+
+talking_computers = []
+
+50.times { talking_computers << TalkingComputer.new }
+talking_computers.each do |computer|
+  computer.avoid('yes')
+  computer.personality_problems(3)
+end
+
+
