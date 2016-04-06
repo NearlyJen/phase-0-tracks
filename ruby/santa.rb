@@ -36,6 +36,7 @@ class Santa
   end
 end
 
+#driver code releases 0 - 3
 jen = Santa.new('female', 'multi')
 jen.speak
 jen.eat_milk_and_cookies('ginger snap')
@@ -48,6 +49,7 @@ gender_options.length.times do |x|
   santas << Santa.new(gender_options[x], ethnicity_options[x])
 end
 
+# release 4
 50.times do |x|
   x = Santa.new(gender_options.sample, ethnicity_options.sample)
   x.age = Random.rand(140)
