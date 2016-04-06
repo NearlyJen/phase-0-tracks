@@ -1,7 +1,6 @@
 santas = []
 gender_options = ['male', 'female', 'dolphin', 'computer', 'trans', 'fluid']
 ethnicity_options = ['white', 'green', 'brown', 'pinkish', 'greenish', 'dalak', 'purplish']
-age_options = [0..140]
 
 # builds class for Santas
 class Santa
@@ -47,9 +46,8 @@ gender_options.length.times do |x|
   santas << Santa.new(gender_options[x], ethnicity_options[x])
 end
 
-50.times do
-  gender = gender_options.sample
-  ethnicity = ethnicity_options.sample
-  Santa.new(gender, ethnicity)
-  puts "Yay! A new Santa is born. It's a #{ethnicity} #{gender}!"
+50.times do |x|
+  x = Santa.new(gender_options.sample, ethnicity_options.sample)
+  x.age = Random.rand(140)
+  puts "Yay! There is a new Santa. It's a #{x.ethnicity} #{x.gender} who is #{x.age} years old!"
 end
