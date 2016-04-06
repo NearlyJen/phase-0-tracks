@@ -1,5 +1,12 @@
+santas = []
+gender_options = ['male', 'female', 'dolphin', 'computer', 'trans', 'fluid']
+ethnicity_options = ['white', 'green', 'brown', 'pinkish', 'greenish', 'dalak', 'purplish']
+age_options = [0..140]
+
 # builds class for Santas
 class Santa
+  attr_accessor :age, :gender, :ethnicity
+
   def initialize(gender, ethnicity)
     puts 'Initializing Santa instance ...'
     @gender = gender
@@ -26,15 +33,6 @@ class Santa
     @reindeer_ranking.insert(-1, reindeer_name)
     puts @reindeer_ranking
   end
-
-  #getter methods for attributes
-  def gender
-    @gender
-  end
-
-  def ethnicity
-    @ethnicity
-  end
 end
 
 jen = Santa.new('female', 'multi')
@@ -45,12 +43,13 @@ puts jen.ethnicity
 jen.get_mad_at('Dasher')
 jen.celebrate_birthday
 
-santas = []
-gender_options = ['boy', 'girl', 'man', 'woman', 'trans', 'undefined', 'fluid']
-ethnicity_options = ['white', 'black', 'brown', 'pinkish', 'greenish', 'purplish', 'dalak']
-
 gender_options.length.times do |x|
   santas << Santa.new(gender_options[x], ethnicity_options[x])
 end
 
-
+50.times do
+  gender = gender_options.sample
+  ethnicity = ethnicity_options.sample
+  Santa.new(gender, ethnicity)
+  puts "Yay! A new Santa is born. It's a #{ethnicity} #{gender}!"
+end
