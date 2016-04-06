@@ -4,6 +4,8 @@ ethnicity_options = ['white', 'green', 'brown', 'pinkish', 'greenish', 'dalak', 
 
 # builds class for Santas
 class Santa
+  #reader not really necessary but it's on the rubric
+  attr_reader :age, :gender, :ethnicity
   attr_accessor :age, :gender, :ethnicity
 
   def initialize(gender, ethnicity)
