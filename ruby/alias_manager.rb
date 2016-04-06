@@ -17,12 +17,14 @@ until choice == 'quit'
 		
 			#downcase it here so that the symbol stays capitalized
 			name = real_name.downcase
-			# MAKE A METHOD
+
+			# MAKE THIS A METHOD
 			#take the name and sub out the letters for new letters
 			name = name.tr('aeiou', 'eioua')
-			# MAKE A METHOD
-			name = name.tr('bcdfghjklmnpqrstvwxyz', 'cdfghjklmnpqrstvwxyzb')
-			# MAKE A METHOD
+				# MAKE A METHOD
+		name = name.tr('bcdfghjklmnpqrstvwxyz', 'cdfghjklmnpqrstvwxyzb')
+
+			# MAKE THIS A METHOD
 			# make it an array and then capitalize each item in that array
 			name = name.split(' ').map( & :capitalize)
 			
