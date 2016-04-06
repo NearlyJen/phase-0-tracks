@@ -40,8 +40,8 @@ end
 jen = Santa.new('female', 'multi')
 jen.speak
 jen.eat_milk_and_cookies('ginger snap')
-jen.gender
-jen.ethnicity
+puts jen.gender
+puts jen.ethnicity
 jen.get_mad_at('Dasher')
 jen.celebrate_birthday
 
