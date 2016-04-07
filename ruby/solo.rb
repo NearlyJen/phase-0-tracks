@@ -28,6 +28,7 @@ class Toon
     @race
   end
 
+  # method to allow user to choose race
   def choose_race
     if @faction == 'Horde'
       puts "What race would you like #{@name} to be? Horde races are: #{$horde_races}"
@@ -41,6 +42,7 @@ class Toon
     end
   end
 
+  # user chooses which action to do
   def fight_or_quest
     choice = " "
     until choice == 'quit'
@@ -61,6 +63,7 @@ class Toon
     end
   end
 
+  # let the user fight and gain levels
   def fight
     if @level <= 10
       @level += 1
@@ -74,6 +77,7 @@ class Toon
     end
   end
 
+  # let the user quest and gain levels
   def quest
     if @level <= 10
       @level += 1
@@ -87,6 +91,7 @@ class Toon
     end
   end
 
+  # it's a dance method.
   def dance
     puts "#{@name} breaks out into a joyous-sexy-drunken dance. You go #{@name}."
   end
@@ -103,12 +108,18 @@ until to_do == 'quit'
     puts "Would you like to play Alliance or Horde?"
     faction = gets.chomp.capitalize
 
+    #initialize class and cheer about it
     @character = Toon.new(name, faction)
     @character.choose_race
     puts "Ok, you have an awesome new toon named #{@character.name}, a member of the #{@character.faction} and a #{@character.race}."
+
+    #saves toon in an array of...toon arrays
     toon_arr = [@character.name, @character.faction, @character.race]
     toons.push(toon_arr)
+
+    # method to let user play with their new toon
     @character.fight_or_quest
+
   elsif to_do == 'quit'
     puts "Thanks for playing! You've made these toons."
     toons.each do |toon|
