@@ -12,6 +12,7 @@
 
 # I made these global because I couldn't make them work otherwise but I don't know
 # why and I'm going to work on it.
+toons = []
 $horde_races = ['Pandaren', 'Goblin', 'Blood Elf', 'Orc', 'Tauren', 'Troll', 'Undead']
 $alliance_races = ['Pandaren', 'Worgen', 'Draenei', 'Night Elf', 'Dwarf', 'Gnome', 'Human']
 
@@ -33,22 +34,27 @@ class Toon
       puts "What race would you like #{@name} to be? Alliance races are: #{$alliance_races}"
       @race = gets.chomp.capitalize
     else
-      puts "I'm not sure what you're saying. Let's go with Alliance, they're nicer."
-      @race = 'Alliance'
+      puts "I'm not sure what you're saying. Let's go with 'Human' since you couldn't get this right."
+      @race = 'Human'
     end
   end
 
   def fight_or_quest
     choice = " "
     until choice == 'quit'
-      puts 'Would you like to fight, quest, or quit?'
+      puts 'Would you like to dance, fight, quest, or quit?'
       choice = gets.chomp.downcase
-      if choice == 'fight'
+      case choice
+      when 'fight'
         fight
-      elsif choice == 'quest'
+      when 'quest'
         quest
+      when 'dance'
+        dance
+      when 'quit'
+        puts "Bye #{@name}!"
       else
-        puts "Thanks for playing!"
+        puts "Please enter 'fight', 'dance', 'quest', or 'quit'."
       end
     end
   end
@@ -59,6 +65,9 @@ class Toon
       puts "You run and hide. Maybe quest and gain some levels? Current level: #{@level}"
     elsif @level <= 50
       puts "You bled, it was hard, but you won. Current level: #{@level}"
+      @level += 1
+    elsif @level <= 75
+      puts "You looked at a Big Bad and he fell over dead. Have a level, though you don't really need it. Current level: #{@level}"
       @level += 1
     end
   end
@@ -71,7 +80,7 @@ class Toon
       puts "You killed some stuff and got some loot. Plus, a level! Current level: #{@level}"
       @level += 1
     elsif @level <= 75
-      puts "You looked at a Big Bad and he fell over dead. Have a level, though you don't really need it. Current level: #{@level}"
+      puts "You poop gold and can kill with your pinky. You've done all of the quests. Current level: #{@level}"
       @level += 1
     end
   end
@@ -81,14 +90,29 @@ class Toon
   end
 end
 
-puts 'What should we name your new toon?'
-name = gets.chomp.capitalize
+to_do = ' '
+until to_do == 'quit'
+  puts "Would you like to make a new toon? ('yes' or 'quit')"
+  to_do = gets.chomp.downcase
+  if to_do == 'yes'
+    puts 'What would you like to name your new toon?'
+    name = gets.chomp.capitalize
 
-puts "Would you like to play Alliance or Horde?"
-faction = gets.chomp.capitalize
+    puts "Would you like to play Alliance or Horde?"
+    faction = gets.chomp.capitalize
 
-@character = Toon.new(name, faction)
-@character.choose_race
-puts "Ok, you have an awesome new toon named #{@character.name}, a member of the #{@character.faction} and a #{@character.race}."
-@character.dance
-@character.fight_or_quest
+    @character = Toon.new(name, faction)
+    @character.choose_race
+    puts "Ok, you have an awesome new toon named #{@character.name}, a member of the #{@character.faction} and a #{@character.race}."
+    toon_arr = [@character.name, @character.faction, @character.race]
+    toons.push(toon_arr)
+    @character.fight_or_quest
+  elsif to_do == 'quit'
+    puts "Thanks for playing! You've made these toons."
+    toons.each do |toon|
+      p toon
+    end
+  else
+    puts "Please type 'yes' or 'quit'"
+  end
+end
