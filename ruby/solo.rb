@@ -5,13 +5,13 @@
 # can choose from a list of races
 # will have a level
 # methods:
-# fight (or run and hide depending on level) - if you fight you gain a level. if you run and hide you lose one
+# fight (or run and hide depending on level) - if you fight you gain a level.
 # dance - makes your toon break into dance
-# quest - go looking for things to do! For fun, questing will make your level go up by one
+# quest - go looking for things to do! level will go up by one
 
-toons = []
 $horde_races = ['Pandaren', 'Goblin', 'Blood Elf', 'Orc', 'Tauren', 'Troll', 'Undead']
 $alliance_races = ['Pandaren', 'Worgen', 'Draenei', 'Night Elf', 'Dwarf', 'Gnome', 'Human']
+
 # declaring Toon class for making all of the new Toons
 class Toon
   attr_accessor :name, :race, :faction, :level
@@ -30,18 +30,45 @@ class Toon
       puts "What race would you like #{@name} to be? Alliance races are: #{$alliance_races}"
       @race = gets.chomp.capitalize
     else
-      puts "I'm not sure"
+      puts "I'm not sure what you're saying. Let's go with Alliance, they're nicer."
+      @race = 'Alliance'
     end
   end
 
-  def fight_quest(choice)
-    if choice == 'fight' && @level <= 10
-      puts "You run and hide. Live to fight another day. Maybe quest and gain some levels?"
-    elsif choice == 'fight' && @level <=75
-      puts "you bled, it was hard, but you won."
+  def fight_or_quest
+    choice = " "
+    until choice == 'quit'
+      puts 'Would you like to fight, quest, or quit?'
+      choice = gets.chomp.downcase
+      if choice == 'fight'
+        fight
+      elsif choice == 'quest'
+        quest
+      else
+        puts "Thanks for playing!"
+      end
+    end
+  end
+
+  def fight
+    if @level <= 10
       @level += 1
-    else
-      puts "You should see the other guy"
+      puts "You run and hide. Maybe quest and gain some levels? Current level: #{@level}"
+    elsif @level <= 50
+      puts "You bled, it was hard, but you won. Current level: #{@level}"
+      @level += 1
+    end
+  end
+
+  def quest
+    if @level <= 10
+      @level += 1
+      puts "You go on a lame little quest gathering fruit, but you level up. Current level: #{@level}"
+    elsif @level <= 50
+      puts "You killed some stuff and got some loot. Plus, a level! Current level: #{@level}"
+      @level += 1
+    elsif @level <= 75
+      puts "You looked at a Big Bad and he fell over dead. Have a level, though you don't really need it. Current level: #{@level}"
       @level += 1
     end
   end
@@ -57,10 +84,7 @@ name = gets.chomp.capitalize
 puts "Would you like to play Alliance or Horde?"
 faction = gets.chomp.capitalize
 
-character = Toon.new(name, faction)
-character.choose_race
-puts "#{character.name}: #{character.faction}: #{character.race}"
-
-puts "Would you like to fight or quest?"
-choice = gets.chomp.downcase
-character.fight_quest(choice)
+@character = Toon.new(name, faction)
+@character.choose_race
+puts "#{@character.name}: #{@character.faction}: #{@character.race}"
+@character.fight_or_quest
