@@ -9,6 +9,9 @@
 # dance - makes your toon break into dance
 # quest - go looking for things to do! level will go up by one
 
+
+# I made these global because I couldn't make them work otherwise but I don't know
+# why and I'm going to work on it.
 $horde_races = ['Pandaren', 'Goblin', 'Blood Elf', 'Orc', 'Tauren', 'Troll', 'Undead']
 $alliance_races = ['Pandaren', 'Worgen', 'Draenei', 'Night Elf', 'Dwarf', 'Gnome', 'Human']
 
@@ -86,5 +89,6 @@ faction = gets.chomp.capitalize
 
 @character = Toon.new(name, faction)
 @character.choose_race
-puts "#{@character.name}: #{@character.faction}: #{@character.race}"
+puts "Ok, you have an awesome new toon named #{@character.name}, a member of the #{@character.faction} and a #{@character.race}."
+@character.dance
 @character.fight_or_quest
