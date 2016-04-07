@@ -1,17 +1,19 @@
 # Release 0 - Design a class
-# class WarcraftToon - this will build a new character for plaing in WoW
-# will have a name
-# will be either Alliance or Horde
-# can choose from a list of races
+# class Toon - this will build a new character for plaing in WoW
+# will have a name (user defined)
+# will be either Alliance or Horde (user defined)
+# can choose from a list of races (user defined)
 # will have a level
 # methods:
 # fight (or run and hide depending on level) - if you fight you gain a level.
 # dance - makes your toon break into dance
 # quest - go looking for things to do! level will go up by one
+# can keep making new toons and playing with them
+# see list of toons when done
 
 
-# I made these global because I couldn't make them work otherwise but I don't know
-# why and I'm going to work on it.
+# I made these global because I couldn't make them work otherwise but I don't
+# know why and I'm going to work on it.
 toons = []
 $horde_races = ['Pandaren', 'Goblin', 'Blood Elf', 'Orc', 'Tauren', 'Troll', 'Undead']
 $alliance_races = ['Pandaren', 'Worgen', 'Draenei', 'Night Elf', 'Dwarf', 'Gnome', 'Human']
