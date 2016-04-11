@@ -6,13 +6,17 @@
 // join the letters back together again into a new string
 // return the new string
 
-function reverse(str){
-  var split = str.split("");
-  console.log(split);
-  var reversed = split.reverse();
-  console.log(reversed);
-  var new_String = reversed.join("");
-  console.log(new_String);
+function reverse(str) {
+  var reversed_str = '';
+  for (var i = str.length - 1; i >= 0; i--)
+    reversed_str += str[i];
+    return reversed_str
 }
 
-  reverse("Jennifer")
+  if (1 == 1){
+    console.log(reverse("Jennifer"));
+  }
+  else {
+    console-log("No reverse string for you");
+  }
+
