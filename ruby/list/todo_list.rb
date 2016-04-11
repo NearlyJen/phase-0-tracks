@@ -19,3 +19,4 @@ class TodoList
     @list.fetch(index_number)
   end
 end
+
