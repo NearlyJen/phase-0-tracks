@@ -32,8 +32,9 @@
 # => "Elementary, my dear Watson!”
 
 "z”.org
-# => 122 
+# => 122
 # (What is the significance of the number 122 in relation to the character z? in the unicode list of characters z's ordinal number is 122)
 
 "How many times does the letter 'a’ appear in this string?”.count("a")
 #=> 4
+

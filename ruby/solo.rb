@@ -123,7 +123,7 @@ until to_do == 'quit'
   elsif to_do == 'quit'
     puts "Thanks for playing! You've made these toons."
     toons.each do |toon|
-      p toon
+      p toon #need to interpolate here
     end
   else
     puts "Please type 'yes' or 'quit'"
