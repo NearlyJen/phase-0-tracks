@@ -2,12 +2,14 @@
 // decalre a new function
 // it should take an array as a parameter
 // it should look through the entire array and find which item in the array is longest
-//it should return the content of that longest item
-var my_Array = ["Jennifer", "Theron", "Ethan", "Barbarasam", "Sam"];
-var currentLongest = 0;
-var longestLongest;
+// by comparing it to the length of the item before it
+// after goign through every item in the array
+//it should return the content of the longest item
 
-function whats_Longest(my_Array) {
+
+function whatsLongest(my_Array) {
+  var longestLongest = "";
+  var currentLongest = 0;
   for (var i = 0; i < my_Array.length; i++) {
     if (my_Array[i].length > currentLongest) {
       currentLongest = my_Array[i].length;
@@ -17,4 +19,6 @@ function whats_Longest(my_Array) {
   return longestLongest;
 }
 
-console.log(whats_Longest(my_Array))
+console.log(whatsLongest(["Jennifer", "Theron", "Ethan", "Barbarasam", "Sam"]));
+
+console.log(whatsLongest(["Joe", "Nietzsche", "Buddy", "Fern"]));
