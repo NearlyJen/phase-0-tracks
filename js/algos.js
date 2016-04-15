@@ -2,9 +2,9 @@
 // decalre a new function
 // it should take an array as a parameter
 // it should look through the entire array and find which item in the array is longest
-// by comparing it to the length of the item before it
-// after goign through every item in the array
-//it should return the content of the longest item
+// by comparing it to the length of the item before it and storing the current longest item
+// after going through every item in the array
+// it should return the content of the longest item
 
 function whatsLongest(my_Array) {
   var longestLongest = "";
@@ -18,11 +18,13 @@ function whatsLongest(my_Array) {
   return longestLongest;
 }
 
-// make a function that takes two objects
+// make a function that takes two objects as parameters
 // loop through the objects and compare
 // to see if any of object 1's key-value pairs are equal to
 // object 2's key-value pairs
 // return true if the loop finds one
+// otherwise return false
+// should return false if there are no matching keys
 
 var obj1 = {age: 44, name: "Theron", weight: 175};
 var obj2 = {age: 44, name: "Jennifer", weight: 130};
@@ -41,10 +43,13 @@ var obj4 = {breed: "Labrador", name: "Buddy", weight: 115};
 }
 
 // call a function with an argument telling the function how many words it should make.
-// run through the word making function using a loop
-// for each time through the word making function, generate a random number and get that many random
-// letters out of the alphabet string. combine them into a new string
-// and add the new string to an array. when the loop has finished, return the array of strings.
+// run through the word-making function using a loop which will take an integer as an argument
+// for each time through the word-making function
+// generate a random number
+// and get that many random letters out of the alphabet string.
+// combine them into a new string
+// and add the new string to an array.
+//when the loop has finished, return the array of strings.
 
 function newString(wordLength) {
   var word = "";
