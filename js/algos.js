@@ -70,9 +70,6 @@ console.log(whatsLongest(["A", "Jen", "Theron", "Antidisestablishmentarianism", 
 console.log(matchyMatchy(obj1, obj2));
 console.log(matchyMatchy(obj3, obj4));
 
-
-
-
 for (i = 0; i <= 10; i++) {
   var newArray = howManyWords(9);
   console.log(newArray);
