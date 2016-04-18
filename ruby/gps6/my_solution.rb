@@ -41,11 +41,7 @@ class VirusPredictor
 def predicted_deaths
   # predicted deaths is solely based on population density
   deaths_num = 0
-  how_many = { '200' => 0.4,
-               '150' => 0.3,
-               '100' => 0.2,
-               '50'  => 0.1,
-               '0'   => 0.05 }
+  how_many = { '200' => 0.4, '150' => 0.3, '100' => 0.2, '50' => 0.1, '0' => 0.05 }
 
   how_many.each do |density, rate|
     if @population_density >= how_many[density].to_i
@@ -62,11 +58,7 @@ end
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     speed = 0.0
-    how_fast = { '200' => 0.5,
-                 '150' => 1,
-                 '100' => 1.5,
-                 '50'  => 2,
-                 '0'   => 2.5 }
+    how_fast = { '200' => 0.5, '150' => 1, '100' => 1.5, '50' => 2, '0' => 2.5 }
 
     how_fast.each do |density, rate|
       speed += rate if @population_density >= density.to_i
