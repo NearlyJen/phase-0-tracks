@@ -9,16 +9,23 @@
 # file where to find the css that it needs, we require_relative to indicate additional files holding
 # information that we need.
 #
+#Release 3:
+# State Data is a hash whose values are hashes. I can see that STATE_DATA is available to
+# Virus_Predictor and is all caps so I think it is a constant - the data will stay the same
+#
 require_relative 'state_data'
 
 class VirusPredictor
-
+  # method to initialize an instance of the virus predictor which takes
+  # a state, population density, and population as arguments.
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
 
+  # this method calls two additional (private) methods. First the predicted deaths method
+  # and then the speed of spread method.
   def virus_effects
     predicted_deaths(@population_density, @population, @state)
     speed_of_spread(@population_density, @state)
@@ -26,6 +33,9 @@ class VirusPredictor
 
   private
 
+  # a private method which takes the density of a population and ises that
+  # to determine the number of predicted deaths by way of taking a
+  # set fraction and multiplying it b the population, reducing to nearest integer.
   def predicted_deaths(population_density, population, state)
     # predicted deaths is solely based on population density
     if @population_density >= 200
@@ -44,6 +54,8 @@ class VirusPredictor
 
   end
 
+  # a private method which uses population density to determine how fast the disease will spread
+  # by way of higher density populations spreading at a faster rate.
   def speed_of_spread(population_density, state) #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
