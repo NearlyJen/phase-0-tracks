@@ -1,10 +1,13 @@
 # Virus Predictor
 
-# I worked on this challenge [by myself, with: ].
+# I worked on this challenge [by myself, due to scheduling mishap].
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
+# require relative is allowing the program to look outside itself for files that it needs.
+# in this case, the file is in the same directory, but in the same way we tell and html
+# file where to find the css that it needs, we require_relative to indicate additional files holding
+# information that we need.
 #
 require_relative 'state_data'
 
