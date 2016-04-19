@@ -1,0 +1,25 @@
+sqlite> SELECT * FROM members;
+1|Jennifer|44|true
+2|Theron|39|true
+3|Ethan|13|false
+
+sqlite> UPDATE to_do
+   ...> SET complete = 'true'
+   ...> WHERE complete = 'false';
+sqlite> SELECT * FROM to_do;
+1|buy kale|3|true|2
+2|wash car|2|true|3
+3|get job|1|true|1
+
+sqlite> SELECT * FROM members, to_do WHERE members.id = to_do.member_id;
+2|Theron|39|true|1|buy kale|3|true|2
+3|Ethan|13|false|2|wash car|2|true|3
+1|Jennifer|44|true|3|get job|1|true|1
+
+sqlite> SELECT members.name, to_do.description FROM members JOIN to_do ON members.id = to_do.member_id;
+Theron|buy kale
+Ethan|wash car
+Jennifer|get job
+
+sqlite> DELETE FROM to_do WHERE complete = 'true';
+sqlite> SELECT * FROM to_do;
