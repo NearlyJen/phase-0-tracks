@@ -1,0 +1,26 @@
+1) You've joined two tables before. How do you join three? You just create multiple joins as seen in the query for the next question.
+2) There are some repetitive columns if we choose to view all fields. Choose instead to just view the user's names, the business name, the star rating, and the comment.
+
+
+SELECT users.first_name, businesses.name, reviews.stars, reviews.comments
+FROM reviews
+    JOIN users
+        ON users.id = reviews.user_id
+    JOIN businesses
+        ON businesses.id = reviews.business_id;
+
+
+Angelina|Jerusalem Cafe|4|cool
+Mindy|Beer Shop|1|hate it
+
+3) How do you view the data of all three tables for just one particular business?
+
+SELECT users.first_name, businesses.name, reviews.stars, reviews.comments
+FROM reviews
+    JOIN users
+        ON users.id = reviews.user_id
+    JOIN businesses
+        ON businesses.id = reviews.business_id
+    WHERE business_id = 1;
+
+Mindy|Beer Shop|1|hate it
