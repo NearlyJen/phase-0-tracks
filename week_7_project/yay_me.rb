@@ -59,16 +59,20 @@ def create_goal(db, description)
 end
 
 # methods to let users add, update, or delete personal goals
-def create_personal_goal(db, timeline, complete)
-  db.execute('insert into goals (timeline, complete) values ( ?, ?)', [timeline, complete])
+def create_personal_goal(db, goal_id, timeline, complete)
+  db.execute('insert into goals (goal_id, timeline, complete) values ( ?, ?, ?)', [goal_id, timeline, complete])
 end
 
-def update_personal_goal(db, timeline)
-  db.execute("UPDATE users SET timeline=? WHERE id=?", [timeline])
+def update_personal_goal_time(db, id, timeline)
+  db.execute("UPDATE users SET timeline=? WHERE id=?", [id, timeline])
 end
 
-def delete_personal_goal(db, timeline, complete)
-  db.execute("DELETE FROM users WHERE name=?", [name])
+def update_personal_goal_complete(db, id, complete)
+  db.execute("UPDATE users SET complete=? WHERE id=?", [id, complete])
+end
+
+def delete_personal_goal(db, id)
+  db.execute("DELETE FROM users WHERE id=?", [id])
 end
 
 

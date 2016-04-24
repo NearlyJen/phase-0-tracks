@@ -13,7 +13,7 @@ create_table_cmd = <<-SQL
     name VARCHAR(255),
     age INT
   )
-SQL
+SQL->>
 
 # create the table
 db.execute(create_table_cmd)
