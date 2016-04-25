@@ -1,3 +1,6 @@
+# THis is incomplete and will be worked on during week 9 as per Tyler's instructions. I've had an eye problem that is requiring surgery. Thanks!
+
+
 # User Can:
 # Add, update, or delete themselves themselves in db
 # Create personal goal
