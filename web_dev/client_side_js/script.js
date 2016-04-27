@@ -4,10 +4,11 @@ var paragraph = 0;
 var pinkify = setInterval(function() {
   paragraphs[paragraph].style.backgroundColor = "pink";
   paragraph++;
-  if(paragraph > paragraphs.length) {
-    clearInterval(pinkify);
-  }
 }, 3000);
+
+setTimeout(function() {
+  clearInterval(pinkify);
+}, 13000);
 
 function goAway() {
   if (this.style.color == 'blue') {
