@@ -1,0 +1,5 @@
+* I can't say it better than this, so from Wikipedia "The Unix philosophy emphasizes building simple, short, clear, modular, and extensible code that can be easily maintained and repurposed by developers other than its creators. The Unix philosophy favors composability as opposed to monolithic design."
+
+* Internet hosting services - the people who will let your website live on their servers / hardware - will also rent you a VPS or Virtual Private Server. This is a whole virtual machine that you are able to run software on privately without having to buy and maintain the physical machines yourself. This makes a VPS cheaper and easier for most people as compared to building and maintaining a server and running it.
+
+*  This is a bad idea because ROOT is a superuser and can do anything and everything. Instead of a normal user being able to affect their own files, ROOT can do anything it wants (including accidentally) to the entire system and everything in it.
